@@ -34,13 +34,11 @@ public class SubContratado extends Empleado {
 	}
 	
 	@Override
-	public String toString() 
-	{
+	public String toString() {
 		return  this.getClass().getSimpleName() + " de nombre " + super.getNombre() 
-				+ " edad " + super.getEdad() + " gana " + calcularPago();
+				+ " edad " + super.getEdad() + " quien trabaja " + calcularPago();
 		
 	}
-	
 	
 	
 }
