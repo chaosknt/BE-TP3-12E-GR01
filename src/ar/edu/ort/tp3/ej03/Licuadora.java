@@ -1,4 +1,4 @@
-package ar.edu.ort.tp3.ej02;
+package ar.edu.ort.tp3.ej03;
 
 public class Licuadora extends Electrodomestico{
 	
@@ -33,6 +33,7 @@ public class Licuadora extends Electrodomestico{
 	{		
 		return super.mostrarProducto() + " Potencia: " + potencia + " Velocidades: " + velocidades + " Precio: $" + super.getPrecio();
 	}
+
 	
 	
 	

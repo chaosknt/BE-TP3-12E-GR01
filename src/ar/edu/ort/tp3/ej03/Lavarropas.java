@@ -1,6 +1,6 @@
-package ar.edu.ort.tp3.ej02;
+package ar.edu.ort.tp3.ej03;
 
-public class Lavarropas extends Electrodomestico{
+public class Lavarropas extends Electrodomestico implements IFuncion{
 	
 	private int cargaMaxima;
 	private boolean semiAutomatico;
@@ -27,10 +27,27 @@ public class Lavarropas extends Electrodomestico{
 		return semiAutomatico;
 	}
 
-	public void setSemiAutomatico(boolean semiAutomatico) {
+	public void setSemiAutomatico(boolean semiAutomatico) 
+	{
 		this.semiAutomatico = semiAutomatico;
 	}
+
+	@Override
+	protected String mostrarDetalleProducto() 
+	{
+		return super.mostrarProducto() + mostrarTipo(semiAutomatico)+ " Carga maxima: " + cargaMaxima + " precio: $" + super.getPrecio();
+	}
 	
+	public String mostrarTipo(boolean semiAutomatico) 
+	{
+		String retorno = "Semi automatico: No ";
+		if(semiAutomatico)
+		{
+			retorno = "Semi automatico: Si ";
+		}
+		
+		return retorno;
+	}
 	
 
 }

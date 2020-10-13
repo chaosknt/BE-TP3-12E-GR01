@@ -1,6 +1,6 @@
-package ar.edu.ort.tp3.ej02;
+package ar.edu.ort.tp3.ej03;
 
-public class Heladera  extends Electrodomestico{
+public class Heladera  extends Electrodomestico implements IFuncion{
 	
 	private int capacidad;
 	private boolean noFrost;
@@ -30,10 +30,12 @@ public class Heladera  extends Electrodomestico{
 	@Override
 	protected String mostrarDetalleProducto() 
 	{		
-		return super.mostrarProducto() +  mostrarTipoHeladera(noFrost) + " Capacidad: " + capacidad + " Precio: $" + super.getPrecio();
-	}
+		return super.mostrarProducto() +  mostrarTipo(noFrost) + " Capacidad: " + capacidad + " Precio: $" + super.getPrecio();
+	}	
 	
-	private String mostrarTipoHeladera(boolean noFrost) 
+
+	
+	public String mostrarTipo(boolean condicion) 
 	{
 		String retorno = "no Frost: No ";
 		if(noFrost)

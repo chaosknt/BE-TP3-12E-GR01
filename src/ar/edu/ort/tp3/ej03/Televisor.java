@@ -1,6 +1,6 @@
-package ar.edu.ort.tp3.ej02;
+package ar.edu.ort.tp3.ej03;
 
-public class Televisor extends Electrodomestico{
+public class Televisor extends Electrodomestico implements IFuncion{
 	
 	private int dimension;
 	private boolean esSmart;
@@ -35,7 +35,23 @@ public class Televisor extends Electrodomestico{
 	{
 		this.esSmart = esSmart;
 	}
+
+	@Override
+	protected String mostrarDetalleProducto()
+	{
+		return super.mostrarProducto() + mostrarTipo(esSmart)+ " Pulgadas: " + dimension + " precio: $" + super.getPrecio();
+	}
 	
+	public String mostrarTipo(boolean smart) 
+	{
+		String retorno = "SmartTv: No ";
+		if(smart)
+		{
+			retorno = "SmartTv: Si ";
+		}
+		
+		return retorno;
+	}
 	
 
 }

@@ -1,4 +1,4 @@
-package ar.edu.ort.tp3.ej02;
+package ar.edu.ort.tp3.ej03;
 
 public abstract class Electrodomestico {
 	
@@ -19,72 +19,72 @@ public abstract class Electrodomestico {
 		this.precio = precio;
 	}
 	
-	protected String getMarca()
+	public String getMarca()
 	{
 		return marca;
 	}
 	
-	protected void setMarca(String marca)
+	public void setMarca(String marca)
 	{
 		this.marca = marca;
 	}
 	
-	protected String getModelo() {
+	public String getModelo() {
 		return modelo;
 	}
 	
-	protected void setModelo(String modelo)
+	public void setModelo(String modelo)
 	{
 		this.modelo = modelo;
 	}
 	
-	protected int getNumSerie() 
+	public int getNumSerie() 
 	{
 		return numSerie;
 	}
 	
-	protected void setNumSerie(int numSerie) 
+	public void setNumSerie(int numSerie) 
 	{
 		this.numSerie = numSerie;
 	}
 	
-	protected Voltaje getTipo() 
+	public Voltaje getTipo() 
 	{
 		return tipo;
 	}
 	
-	protected void setTipo(Voltaje tipo) 
+	public void setTipo(Voltaje tipo) 
 	{
 		this.tipo = tipo;
 	}
 	
-	protected Estado getEstado()
+	public Estado getEstado()
 	{
 		return estado;
 	}
 	
-	protected void setEstado(Estado estado)
+	public void setEstado(Estado estado)
 	{
 		this.estado = estado;
 	}
 	
-	protected double getPrecio() 
+	public double getPrecio() 
 	{
 		return precio;
 	}
 	
-	protected void setPrecio(double precio) 
+	public void setPrecio(double precio) 
 	{
 		this.precio = precio;
 	}
 	
-	protected  String mostrarProducto()
+	public  String mostrarProducto()
 	{
 		return "Producto: "+ this.getClass().getSimpleName() + " Marca: " +
 						    getMarca() + " Modelo: " + getModelo();
 	}
 	
-	protected abstract String mostrarDetalleProducto();
+	protected abstract String mostrarDetalleProducto();	
 	
 	
 	
