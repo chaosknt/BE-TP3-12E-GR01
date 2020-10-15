@@ -34,4 +34,14 @@ public final class Productos {
 	{
 		productos.remove(e);
 	}
+	
+	public int size() 
+	{
+		return productos.size();
+	}
+	
+	public Electrodomestico devolverProducto(int i) 
+	{
+		return productos.get(i);
+	}
 }

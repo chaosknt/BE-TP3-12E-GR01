@@ -8,19 +8,18 @@ public class Main {
 	 
 	public static void main(String[] args) {
 		
-		//agregar productos al stock ok
-		//ver productos ok
-		//falta agregar al carrito, sacar el total y mostrar ticket
+		//al ser un ejercicio basado en herencia y polimorfismo, no se trabajo tanto con las validaciones
+		// ya que no es el objetivo central de este ejercicio
 		
 		Productos stock = new Productos();
-		Carrito carrito = new Carrito();
-			
+		Carrito carrito = null;
+		int producto;			
 		int op;
 		
 		do 
 		{	 
 			mostrarMenuPrincipal(); 
-			op = seleccionarOpcion(0,2,"Elija un numero entre 0 y 2");
+			op = seleccionarOpcion(0,3,"Elija un numero entre 0 y 2");
 			
 			switch(op) 
 			{
@@ -28,29 +27,35 @@ public class Main {
 			break;
 			
 			case 1: menuAgregarProductos();
-						int producto = seleccionarOpcion(1,4,"");
+						producto = seleccionarOpcion(1,4,"");
 						Electrodomestico ob1 = pedirDatos(producto);
 						stock.agregarProducto(ob1);
 					break;
-			case 2: stock.getProductos();
-					break;
 					
-					
+			case 2: 
+				
+			if(stock.size()>0) 
+			{
+				carrito = realizarCompra(stock);
+			}else {
+				System.out.println("No hay productos cargados");
 			}
+				
+				break;			
+								
+								
+			}
+			
 		}while(op != 0);
 		
-		
+				
+		carrito.getTotalCompra();
 
-	}
-	
-	public static void clearScreen() {  
-	    System.out.print("\033[H\033[2J");  
-	    System.out.flush();  
-	}  
+	}	
 	
 	public static void mostrarMenuPrincipal() 
 	{
-		System.out.println("0.Salir - 1. Cargar productos - 2. Ver productos ");
+		System.out.println("0.Salir - 1. Cargar productos - 2. Ver productos");
 	}
 	
 	public static int seleccionarOpcion(int piso, int techo, String mensaje)
@@ -150,6 +155,32 @@ public class Main {
 		}
 		
 		return retorno;
+	}
+	
+	public static Carrito realizarCompra(Productos stock) 
+	{
+		int opcion = 1;
+		int producto;
+		Carrito carrito = new Carrito();
+		
+		while(opcion ==  1)
+		{
+			
+			stock.getProductos();	
+			producto = seleccionarOpcion(0,stock.size(),"Elija un producto para ver detalladamente");
+			System.out.println(stock.devolverProducto(producto).mostrarDetalleProducto());
+			opcion = seleccionarOpcion(0,1,"Agregar al carrito? 1.- Si | 0.- No");
+			
+			if(opcion == 1)
+			{
+				carrito.agregarProducto(stock.devolverProducto(producto));
+			}
+			
+			opcion = seleccionarOpcion(0,1,"seguir comprando? 1.- Si | 0.- No");
+			
+		}
+		
+		return carrito;
 	}
 	
 

@@ -39,7 +39,7 @@ public class Televisor extends Electrodomestico implements IFuncion{
 	@Override
 	protected String mostrarDetalleProducto()
 	{
-		return super.mostrarProducto() + mostrarTipo(esSmart)+ " Pulgadas: " + dimension + " precio: $" + super.getPrecio();
+		return super.mostrarProducto() + " "+mostrarTipo(esSmart)+ " Pulgadas: " + dimension + " precio: $" + super.getPrecio();
 	}
 	
 	public String mostrarTipo(boolean smart) 
