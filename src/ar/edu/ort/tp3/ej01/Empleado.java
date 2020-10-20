@@ -36,7 +36,7 @@ public abstract class Empleado {
 		return "Empleado [nombre=" + nombre + ", edad=" + edad ;
 	}
 	
-	public float calcularPago() {return 0.0f;};
+	public float calcularPago() {return 0.0f;}
 	
 	
 

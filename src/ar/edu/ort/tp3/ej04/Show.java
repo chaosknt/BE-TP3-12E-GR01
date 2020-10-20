@@ -18,6 +18,6 @@ public class Show {
 		alimento = new ArrayList<Alimento>();
 		alimento.add(new Alimento(TipoAlimento.CALAMAR, 50));
 		alimento.add(new Alimento(TipoAlimento.PULPO, 30));
-		alimento.add(new Alimento(TipoAlimento.CANGREGO, 25));
+		alimento.add(new Alimento(TipoAlimento.CANGREJO, 25));
 	}
 }

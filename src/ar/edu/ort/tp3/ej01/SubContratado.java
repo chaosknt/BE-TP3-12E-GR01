@@ -36,7 +36,7 @@ public class SubContratado extends Empleado {
 	@Override
 	public String toString() {
 		return  this.getClass().getSimpleName() + " de nombre " + super.getNombre() 
-				+ " edad " + super.getEdad() + " quien trabaja " + calcularPago();
+				+ " edad " + super.getEdad() + " quien gana " + calcularPago();
 		
 	}
 	
